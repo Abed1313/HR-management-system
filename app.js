@@ -79,16 +79,24 @@ div2.append(h5);
 }
 
 
-let formEle = document.getElementById("myForm");
-formEle.addEventListener("submit", submitEHandeler);
+let buttunEle = document.getElementById("myBtn");
+buttunEle.addEventListener('click', submitEHandeler);
 
 function submitEHandeler(event){
-   event.prevrntDefault();
+   event.preventDefault();
 
-   let fullName= event.target.name.value;
+   let fullName= document.getElementById('name').value;
+   let department=document.getElementById('department').value;
+   let level = document.getElementById('Level').value;
+   let imageURL= document.getElementById('imageURL').value;
+   if (imageURL === ""){
+      imageURL = "https://cdn.discordapp.com/attachments/1220900090844155966/1224130424268390524/defult.jpg?ex=661c5f4c&is=6609ea4c&hm=a08773fdee3d380f2df1135024428d2b472bfe14c39974099e64042d3b802cbb&";
+   }
+
    let addN = new employee(fullName, department ,level, imageURL);
    
-   addN.renderInfo();
+   addN.card();
+   
 }
 
    
