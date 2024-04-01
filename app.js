@@ -58,10 +58,19 @@ document.body.insertBefore(root1,footer);
 }
 
 employee.prototype.card=function(){
-   let section = document.getElementById('Add');
+   let section;
+   if (this.department === "Administration") {
+       section = document.getElementById('Administration');
+   } else if (this.department  === "Marketing") {
+       section = document.getElementById('Marketing');
+   } else if (this.department  === "Development") {
+       section = document.getElementById('Development');
+   } else if (this.department  === "Finance") {
+       section = document.getElementById('Finance');
+   }
    let div1 =document.createElement('div');
 div1.classList.add('card');
-   section.append(div1);
+   section.appendChild(div1);
 
 let img = document.createElement('img');
 img.setAttribute('src', this.imageURL);
@@ -76,6 +85,9 @@ let h5 =document.createElement('h5');
 h5.textContent=` ${this.department} / ${this.level} / ${this.employeeID}`;
 div2.append(h5);
 
+
+
+
 }
 
 
@@ -87,6 +99,7 @@ function submitEHandeler(event){
 
    let fullName= document.getElementById('name').value;
    let department=document.getElementById('department').value;
+   
    let level = document.getElementById('Level').value;
    let imageURL= document.getElementById('imageURL').value;
    if (imageURL === ""){
