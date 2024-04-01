@@ -1,7 +1,7 @@
 
 
 function employee ( fullName, department ,level, imageURL){
-        this.employeeID=this.uniqueNum();
+        this.employeeID=uniqueNum();
         this.fullName=fullName;
         this.department=department;
         this.level=level;
@@ -53,7 +53,9 @@ document.body.insertBefore(root1,footer);
 }
 
 
- employee.prototype.uniqueNum=function(max=9999,min=1000){
+ function uniqueNum(){
+   let min = 1000;
+   let max = 9999;
    return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -79,7 +81,7 @@ let div2 =document.createElement('div');
 div2.classList.add('container');
 div1.append(div2);
 let h4 =document.createElement('h4');
-h4.textContent= this.fullName ;
+h4.textContent= uniqueNum() + " " + this.fullName ;
 div2.append(h4);
 let h5 =document.createElement('h5');
 h5.textContent=` ${this.department} / ${this.level} / ${this.employeeID}`;
@@ -106,7 +108,7 @@ function submitEHandeler(event){
       imageURL = "https://cdn.discordapp.com/attachments/1220900090844155966/1224130424268390524/defult.jpg?ex=661c5f4c&is=6609ea4c&hm=a08773fdee3d380f2df1135024428d2b472bfe14c39974099e64042d3b802cbb&";
    }
 
-   let addN = new employee(fullName, department ,level, imageURL);
+   let addN = new employee(uniqueNum(),fullName, department ,level, imageURL);
    
    addN.card();
    
