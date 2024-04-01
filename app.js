@@ -104,13 +104,13 @@ function submitEHandeler(event){
 
 
     
-     let emplo1=   new employee( 'Ghazi Samer', 'Administration', 'Senior',"https://www.w3schools.com/howto/img_avatar2.png");
-     let emplo2= new employee( 'Lana Ali', 'Finance', 'Senior', "https://www.w3schools.com/howto/img_avatar2.png");
-     let emplo3=  new employee( 'Tamara Ayoub', 'Marketing', 'Senior',"https://www.w3schools.com/howto/img_avatar2.png");
-     let emplo4= new employee( 'Safi Walid', 'Administration', 'Mid-Senior',"https://www.w3schools.com/howto/img_avatar.png");
-     let emplo5=  new employee( 'Omar Zaid', 'Development', 'Senior',"https://www.w3schools.com/howto/img_avatar.png");
-     let emplo6= new employee( 'Rana Saleh', 'Development', 'Junior',"https://www.w3schools.com/howto/img_avatar2.png");
-     let emplo7= new employee('Hadi Ahmad', 'Finance', 'Mid-Senior',"https://www.w3schools.com/howto/img_avatar.png");
+     let emplo1=   new employee( 'Ghazi Samer', 'Administration', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Ghazi.jpg?raw=true");
+     let emplo2= new employee( 'Lana Ali', 'Finance', 'Senior', "https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Lana.jpg?raw=true");
+     let emplo3=  new employee( 'Tamara Ayoub', 'Marketing', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Tamara.jpg?raw=true");
+     let emplo4= new employee( 'Safi Walid', 'Administration', 'Mid-Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Safi.jpg?raw=true");
+     let emplo5=  new employee( 'Omar Zaid', 'Development', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Omar.jpg?raw=true");
+     let emplo6= new employee( 'Rana Saleh', 'Development', 'Junior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Rana.jpg?raw=true");
+     let emplo7= new employee('Hadi Ahmad', 'Finance', 'Mid-Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Hadi.jpg?raw=true");
 
     emplo1.card();
     emplo2.card();
