@@ -11,11 +11,7 @@ function employee ( fullName, department ,level, imageURL){
     }
 
 
-
-
 employee.prototype.calcSalary = function(){
-// console.log("aaaaaaaaaaaaaaa")
-   
 
      var salaryRange={
         'Senior': {min:1500 , max : 2000},
@@ -108,13 +104,13 @@ function submitEHandeler(event){
       imageURL = "https://cdn.discordapp.com/attachments/1220900090844155966/1224130424268390524/defult.jpg?ex=661c5f4c&is=6609ea4c&hm=a08773fdee3d380f2df1135024428d2b472bfe14c39974099e64042d3b802cbb&";
    }
 
-   let addN = new employee(uniqueNum(),fullName, department ,level, imageURL);
+   let addN = new employee(fullName, department ,level, imageURL);
    
    addN.card();
    
 }
 
-   
+
 
 
 
@@ -123,8 +119,8 @@ function submitEHandeler(event){
      let emplo2= new employee( 'Lana Ali', 'Finance', 'Senior', "https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Lana.jpg?raw=true");
      let emplo3=  new employee( 'Tamara Ayoub', 'Marketing', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Tamara.jpg?raw=true");
      let emplo4= new employee( 'Safi Walid', 'Administration', 'Mid-Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Safi.jpg?raw=true");
-     let emplo5=  new employee( 'Omar Zaid', 'Development', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Omar.jpg?raw=true");
-     let emplo6= new employee( 'Rana Saleh', 'Development', 'Junior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Rana.jpg?raw=true");
+     let emplo5=  new employee('Omar Zaid', 'Development', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Omar.jpg?raw=true");
+     let emplo6= new employee('Rana Saleh', 'Development', 'Junior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Rana.jpg?raw=true");
      let emplo7= new employee('Hadi Ahmad', 'Finance', 'Mid-Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Hadi.jpg?raw=true");
 
     emplo1.card();
