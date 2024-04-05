@@ -64,7 +64,7 @@ let DevelopmentT=document.getElementById("DevelopmentT");
 DevelopmentT.textContent=depDSalary;
 let FinanceT=document.getElementById("FinanceT");
 FinanceT.textContent=depFSalary;
-//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 let TotalEmplo=document.getElementById("TotalEmplo");
 TotalEmplo.textContent=countAdministration+countMarketing+countDevelopment+countFinance;
 let AverageAll=document.getElementById("AverageAll");
