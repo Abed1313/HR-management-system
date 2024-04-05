@@ -1,7 +1,7 @@
 
 
 function employee ( fullName, department ,level, imageURL){
-        this.employeeID=this.uniqueNum();
+        this.employeeID=uniqueNum();
         this.fullName=fullName;
         this.department=department;
         this.level=level;
@@ -10,12 +10,9 @@ function employee ( fullName, department ,level, imageURL){
 
     }
 
-
-
+    
 
 employee.prototype.calcSalary = function(){
-// console.log("aaaaaaaaaaaaaaa")
-   
 
      var salaryRange={
         'Senior': {min:1500 , max : 2000},
@@ -53,15 +50,26 @@ document.body.insertBefore(root1,footer);
 }
 
 
- employee.prototype.uniqueNum=function(max=9999,min=1000){
+ function uniqueNum(){
+   let min = 1000;
+   let max = 9999;
    return Math.floor(Math.random() * (max - min) + min);
 }
 
 employee.prototype.card=function(){
-   let section = document.getElementById('Add');
+   let section;
+   if (this.department === "Administration") {
+       section = document.getElementById('Administration');
+   } else if (this.department  === "Marketing") {
+       section = document.getElementById('Marketing');
+   } else if (this.department  === "Development") {
+       section = document.getElementById('Development');
+   } else if (this.department  === "Finance") {
+       section = document.getElementById('Finance');
+   }
    let div1 =document.createElement('div');
 div1.classList.add('card');
-   section.append(div1);
+   section.appendChild(div1);
 
 let img = document.createElement('img');
 img.setAttribute('src', this.imageURL);
@@ -70,11 +78,14 @@ let div2 =document.createElement('div');
 div2.classList.add('container');
 div1.append(div2);
 let h4 =document.createElement('h4');
-h4.textContent= this.fullName ;
+h4.textContent= uniqueNum() + " " + this.fullName ;
 div2.append(h4);
 let h5 =document.createElement('h5');
 h5.textContent=` ${this.department} / ${this.level} / ${this.employeeID}`;
 div2.append(h5);
+
+
+
 
 }
 
@@ -87,6 +98,7 @@ function submitEHandeler(event){
 
    let fullName= document.getElementById('name').value;
    let department=document.getElementById('department').value;
+   
    let level = document.getElementById('Level').value;
    let imageURL= document.getElementById('imageURL').value;
    if (imageURL === ""){
@@ -96,21 +108,41 @@ function submitEHandeler(event){
    let addN = new employee(fullName, department ,level, imageURL);
    
    addN.card();
-   
+   addN.saveData(); 
+  
 }
 
+let count = 0;
+
+employee.prototype.saveData=function(){
+   count++;
+
+   localStorage.setItem("employeeID"+count , this.employeeID);
+
+   localStorage.setItem("name" +count, this.fullName);
+    
+   localStorage.setItem("department" +count,this.department);
+    
+   localStorage.setItem("level" +count,this.level);
    
+   localStorage.setItem("imageURL" +count, this.imageURL);
+
+   localStorage.setItem("salary" +count, this.salary);
+
+}
+
 
 
 
     
-     let emplo1=   new employee( 'Ghazi Samer', 'Administration', 'Senior',"https://www.w3schools.com/howto/img_avatar2.png");
-     let emplo2= new employee( 'Lana Ali', 'Finance', 'Senior', "https://www.w3schools.com/howto/img_avatar2.png");
-     let emplo3=  new employee( 'Tamara Ayoub', 'Marketing', 'Senior',"https://www.w3schools.com/howto/img_avatar2.png");
-     let emplo4= new employee( 'Safi Walid', 'Administration', 'Mid-Senior',"https://www.w3schools.com/howto/img_avatar.png");
-     let emplo5=  new employee( 'Omar Zaid', 'Development', 'Senior',"https://www.w3schools.com/howto/img_avatar.png");
-     let emplo6= new employee( 'Rana Saleh', 'Development', 'Junior',"https://www.w3schools.com/howto/img_avatar2.png");
-     let emplo7= new employee('Hadi Ahmad', 'Finance', 'Mid-Senior',"https://www.w3schools.com/howto/img_avatar.png");
+     let emplo1=   new employee( 'Ghazi Samer', 'Administration', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Ghazi.jpg?raw=true");
+     let emplo2= new employee( 'Lana Ali', 'Finance', 'Senior', "https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Lana.jpg?raw=true");
+     let emplo3=  new employee( 'Tamara Ayoub', 'Marketing', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Tamara.jpg?raw=true");
+     let emplo4= new employee( 'Safi Walid', 'Administration', 'Mid-Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Safi.jpg?raw=true");
+     let emplo5=  new employee('Omar Zaid', 'Development', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Omar.jpg?raw=true");
+     let emplo6= new employee('Rana Saleh', 'Development', 'Junior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Rana.jpg?raw=true");
+     let emplo7= new employee('Hadi Ahmad', 'Finance', 'Mid-Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Hadi.jpg?raw=true");
+ 
 
     emplo1.card();
     emplo2.card();
@@ -120,6 +152,14 @@ function submitEHandeler(event){
     emplo6.card();
     emplo7.card();
    
+    emplo1.saveData();
+    emplo2.saveData();
+    emplo3.saveData();
+    emplo4.saveData();
+    emplo5.saveData();
+    emplo6.saveData();
+    emplo7.saveData();
+
 
 
 // for(let i=0;i< emplo.length; i++){

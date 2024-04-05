@@ -185,6 +185,19 @@ h5 {
   background-color: #412323b2; /* Darker Green */
 }
 
+
+/* Section styling */
+section {
+    display: flex; 
+    flex-wrap: wrap; 
+    flex: 0 0 calc(25% - 20px); /* Set flex basis to 25% minus margin */
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
     </style>
 </head>
 <body>
@@ -224,9 +237,25 @@ h5 {
             <button value="submit" id="myBtn">Submit</button>
         </form>
 
-        <section id="Add">
-            
+        <h1>Administration</h1>
+        <section id="Administration">
+
         </section>
+        <h1>Marketing</h1>
+        <section id="Marketing">
+
+
+        </section>
+        <h1>Development</h1>
+        <section id="Development">
+
+
+        </section>
+        <h1>Finance</h1>
+        <section id="Finance">
+
+        </section>
+
     </main>
     
     <footer>
