@@ -10,6 +10,7 @@ function employee ( fullName, department ,level, imageURL){
 
     }
 
+    
 
 employee.prototype.calcSalary = function(){
 
@@ -107,9 +108,28 @@ function submitEHandeler(event){
    let addN = new employee(fullName, department ,level, imageURL);
    
    addN.card();
-   
+   addN.saveData(); 
+  
 }
 
+let count = 0;
+
+employee.prototype.saveData=function(){
+   count++;
+
+   localStorage.setItem("employeeID"+count , this.employeeID);
+
+   localStorage.setItem("name" +count, this.fullName);
+    
+   localStorage.setItem("department" +count,this.department);
+    
+   localStorage.setItem("level" +count,this.level);
+   
+   localStorage.setItem("imageURL" +count, this.imageURL);
+
+   localStorage.setItem("salary" +count, this.salary);
+
+}
 
 
 
@@ -122,6 +142,7 @@ function submitEHandeler(event){
      let emplo5=  new employee('Omar Zaid', 'Development', 'Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Omar.jpg?raw=true");
      let emplo6= new employee('Rana Saleh', 'Development', 'Junior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Rana.jpg?raw=true");
      let emplo7= new employee('Hadi Ahmad', 'Finance', 'Mid-Senior',"https://github.com/LTUC/amman-prep-d16/blob/main/Class-08/lab/assets/Hadi.jpg?raw=true");
+ 
 
     emplo1.card();
     emplo2.card();
@@ -131,6 +152,14 @@ function submitEHandeler(event){
     emplo6.card();
     emplo7.card();
    
+    emplo1.saveData();
+    emplo2.saveData();
+    emplo3.saveData();
+    emplo4.saveData();
+    emplo5.saveData();
+    emplo6.saveData();
+    emplo7.saveData();
+
 
 
 // for(let i=0;i< emplo.length; i++){

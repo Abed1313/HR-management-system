@@ -6,48 +6,49 @@
     <title>HR management system</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
 
-        header {
-            background-color: #412323b2;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+header {
+    background-color: #412323b2;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
 
-        header h1 {
-            margin: 0;
-        }
+header h1 {
+    margin: 0;
+}
 
-        nav {
-            margin-top: 10px;
-        }
+nav {
+    margin-top: 10px;
+}
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
-        nav ul li a:hover {
-            background-color: #555;
-        }
-        footer {
+nav ul li a:hover {
+    background-color: #555;
+}
+
+footer {
     background-color: #f8f8f8;
     padding: 20px;
     text-align: center;
@@ -71,6 +72,33 @@
         margin-bottom: 10px;
     }
 }
+/* Styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Styles for table headers */
+th {
+    background-color: #574b4bd1;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    border: 2px solid #574b4bd1;
+}
+
+/* Styles for table cells */
+td {
+    border: 2px solid #574b4bd1;
+    padding: 12px;
+}
+
+/* Alternate row background color */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
     </style>
 </head>
 <body>
@@ -86,7 +114,46 @@
     </header>
     
     <main>
-      <p>aaaaaaaaaaaaaaa</p>
+        <table id="table">
+            <tr>
+                <th>Department Name</th>
+                <th>Administration</th>
+                <th>Marketing</th>
+                <th>Development</th>
+                <th>Finance</th>
+            </tr>
+            <tr>
+                <th>Number of employees</th>
+                <td id="AdministrationN"></td>
+                <td id="MarketingN"></td>
+                <td id="DevelopmentN"></td>
+                <td id="FinanceN"></td>
+            </tr>
+            <tr>
+                <th>Average salary</th>
+                <td id="AdministrationA"></td>
+                <td id="MarketingA"></td>
+                <td id="DevelopmentA"></td>
+                <td id="FinanceA"></td>
+            </tr>
+            <tr>
+                <th>Total salary</th>
+                <td id="AdministrationT"></td>
+                <td id="MarketingT"></td>
+                <td id="DevelopmentT"></td>
+                <td id="FinanceT"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Total number of employees</th>
+                <td>Average salary for all departments</td>
+                <th colspan="2">Total salary for all departments</th>
+            </tr>
+            <tr>
+                <td colspan="2" id="TotalEmplo">0</td>
+                <td id="AverageAll">0</td>
+                <td colspan="2" id="TotalSalaryAll">0</td>
+            </tr>
+        </table>
     </main>
 
     <footer>
@@ -102,6 +169,6 @@
     </footer>
 
     
-
+<script src="accounting.js"></script>
 </body>
 </html>
